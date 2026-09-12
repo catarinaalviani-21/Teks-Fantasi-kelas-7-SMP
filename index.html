@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jejak Imajinasi — Menulis Teks Fantasi Kelas 7</title>
+<style>
+:root{
+  --bg:#f5f7fb;--card:#fff;--ink:#20253a;--muted:#687087;
+  --primary:#6c4ce8;--primary2:#8a68f5;--accent:#18a999;--warn:#f59e0b;
+  --danger:#e05252;--line:#e3e6ef;--shadow:0 10px 30px rgba(39,32,74,.10);
+}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#f8f7ff,#eefaf7);color:var(--ink);line-height:1.55}
+header{padding:30px 18px;color:white;background:linear-gradient(135deg,#5c3bd5,#8b68f3 55%,#18a999)}
+.container{max-width:1120px;margin:auto;padding:0 18px}
+.hero{display:flex;gap:22px;align-items:center;justify-content:space-between}.hero h1{margin:0 0 6px;font-size:clamp(28px,5vw,48px)}.hero p{margin:0;opacity:.93}
+.badge{display:inline-block;background:rgba(255,255,255,.18);padding:7px 12px;border-radius:999px;font-size:13px;margin-bottom:10px}
+nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 3px 15px rgba(0,0,0,.05)}
+.tabs{display:flex;gap:6px;overflow:auto;padding:9px 0}.tabs button{border:0;background:transparent;padding:10px 13px;border-radius:10px;cursor:pointer;font-weight:700;color:#535a72;white-space:nowrap}.tabs button.active,.tabs button:hover{background:#eeeaff;color:var(--primary)}
+main{padding:25px 0 50px}.page{display:none}.page.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+h2,h3{margin-top:0}.muted{color:var(--muted)}.small{font-size:13px}
+.step{border-left:5px solid var(--primary);padding:13px 15px;background:#faf9ff;border-radius:10px;margin:10px 0}
+textarea,input,select{width:100%;border:1px solid #ccd1df;border-radius:10px;padding:11px;font:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:130px;resize:vertical}.short{min-height:80px}
+button.primary,.btn{border:0;background:var(--primary);color:#fff;padding:11px 16px;border-radius:10px;font-weight:800;cursor:pointer}.btn.secondary{background:#eef0f7;color:#40465d}.btn.success{background:var(--accent)}.btn.danger{background:var(--danger)}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#edf9f6;color:#087d70;font-size:12px;font-weight:800}
+.notice{padding:13px;border-radius:12px;background:#fff8e8;border:1px solid #f6dfaa}
+.result{padding:14px;border-radius:12px;margin-top:12px;border:1px solid var(--line);background:#fafafa}.ok{border-color:#a9dfd5;background:#effbf8}.bad{border-color:#f0b1b1;background:#fff4f4}
+.progress{height:12px;background:#e7e9f0;border-radius:99px;overflow:hidden}.progress>div{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));width:0%;transition:.3s}
+.question{padding:15px;border:1px solid var(--line);border-radius:13px;margin:12px 0;background:#fcfcff}.question label{display:block;margin:7px 0;cursor:pointer}.question input{width:auto;margin-right:7px}
+.feedback{font-weight:700;margin-top:8px}.score{font-size:28px;font-weight:900;color:var(--primary)}
+.checklist label{display:block;padding:7px 0}.checklist input{width:auto}
+.structure{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.structure div{padding:13px 9px;border-radius:12px;text-align:center;background:#f1efff;border:1px solid #ded7ff;font-weight:800}.structure span{display:block;font-size:12px;color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse}th,td{padding:9px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+footer{text-align:center;color:var(--muted);padding:25px;font-size:13px}
+@media(max-width:700px){.structure{grid-template-columns:1fr 1fr}.hero{display:block}.hero .badge{margin-top:12px}}
+
+.issue-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:15px}.issue-card{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 6px 18px rgba(39,32,74,.08);cursor:pointer;transition:.2s}.issue-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(39,32,74,.12)}.issue-card img{width:100%;height:145px;object-fit:cover;display:block}.issue-card .body{padding:13px}.issue-card h4{margin:0 0 5px}.source{font-size:11px;color:var(--muted);margin-top:7px}.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.news-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}.news-card img{width:100%;height:150px;object-fit:cover;display:block}.news-card .body{padding:16px}.news-card h4{margin:0 0 7px;line-height:1.35}.news-card p{margin:7px 0}.news-meta{font-size:12px;color:var(--muted);font-weight:700}.news-link{display:inline-block;margin-top:9px;color:var(--primary);font-weight:800;text-decoration:none}.literacy-box{background:#f7fbff;border:1px solid #d8e8f5;border-radius:14px;padding:15px;margin-top:14px}.tag{display:inline-block;background:#edf9f6;color:#087d70;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:800;margin-right:5px}.question-mini{margin:8px 0 0;padding-left:18px}.caption{font-size:12px;color:var(--muted);margin-top:5px}.issue-illustration{height:145px;display:flex;align-items:center;justify-content:center;font-size:58px}.fire{background:linear-gradient(135deg,#7f1d1d,#f97316)}.climate{background:linear-gradient(135deg,#0ea5e9,#facc15)}
+</style>
+</head>
+<body>
+<header>
+  <div class="container hero">
+    <div>
+      <span class="badge">Bahasa Indonesia • Kelas VII SMP</span>
+      <h1>🌿 Jejak Imajinasi</h1>
+      <p>Menulis Teks Fantasi dari Isu Lingkungan</p>
+    </div>
+    <div style="font-size:52px">🦋🌳✨</div>
+  </div>
+</header>
+
+<nav>
+  <div class="container tabs">
+    <button class="active" data-page="home">🏠 Mulai</button>
+    <button data-page="ide">1. Menemukan Ide</button>
+    <button data-page="cek">2. Menyunting Bahasa</button>
+    <button data-page="tulis">3. Menulis Cerita</button>
+    <button data-page="kuis">4. Uji Pemahaman</button>
+    <button data-page="evaluasi">5. Refleksi</button>
+  </div>
+</nav>
+
+<main class="container">
+
+<section id="home" class="page active">
+  <div class="card">
+    <h2>🎯 Misi Pembelajaran</h2>
+    <p>Setelah menyelesaikan kegiatan, murid diharapkan mampu:</p>
+    <div class="grid">
+      <div class="step"><b>Memahami</b><br>mengidentifikasi struktur, ciri, dan ciri kebahasaan teks fantasi.</div>
+      <div class="step"><b>Mengaplikasi</b><br>mengembangkan isu lingkungan menjadi ide dan cerita fantasi.</div>
+      <div class="step"><b>Merevisi</b><br>memperbaiki pilihan kata, kalimat, tanda baca, dan melakukan parafrase.</div>
+      <div class="step"><b>Merefleksi</b><br>menilai kekuatan cerita dan pesan kepedulian terhadap lingkungan.</div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🧭 Alur Pembelajaran</h3>
+    <div class="structure">
+      <div>🌱 IDE<span>Isu → ide cerita</span></div>
+      <div>🔎 CEK<span>Kata & kalimat</span></div>
+      <div>✍️ TULIS<span>5 struktur</span></div>
+      <div>🧠 KUIS<span>Cek pemahaman</span></div>
+      <div>⭐ REFLEKSI<span>Evaluasi diri</span></div>
+    </div>
+    <div class="notice" style="margin-top:16px">
+      <b>Catatan guru:</b> Pemeriksaan kata pada aplikasi ini adalah pemeriksaan edukatif berbasis daftar kata/kaidah yang ditanamkan di dalam aplikasi, bukan pengganti pencarian resmi KBBI Daring.
+    </div>
+  </div>
+  <div class="card">
+    <h3>🌏 Pilih Isu Lingkungan</h3>
+    <div class="grid">
+      <button class="btn secondary" onclick="chooseIssue('Kebakaran hutan')">🔥 Kebakaran hutan</button>
+      <button class="btn secondary" onclick="chooseIssue('Sampah plastik')">♻️ Sampah plastik</button>
+      <button class="btn secondary" onclick="chooseIssue('Pencemaran sungai')">💧 Pencemaran sungai</button>
+      <button class="btn secondary" onclick="chooseIssue('Hilangnya habitat hewan')">🐾 Hilangnya habitat</button>
+      <button class="btn secondary" onclick="chooseIssue('Perubahan iklim')">🌡️ Perubahan iklim</button>
+    </div>
+    <p id="issueHome" class="muted"></p>
+  </div>
+
+  <div class="card">
+    <h3>🖼️ Galeri Isu Lingkungan</h3>
+    <p class="muted">Amati gambar, pilih satu isu, lalu gunakan hasil pengamatan sebagai pemantik ide cerita fantasi.</p>
+    <div class="issue-gallery">
+      <div class="issue-card" onclick="chooseIssue('Kebakaran hutan')"><div class="issue-illustration fire" role="img" aria-label="Ilustrasi kebakaran hutan">🔥🌲</div><div class="body"><h4>🔥 Kebakaran hutan</h4><div class="small">Apa dampaknya bagi manusia dan satwa?</div><div class="source">Ilustrasi pembelajaran</div></div></div>
+      <div class="issue-card" onclick="chooseIssue('Sampah plastik')"><img src="https://mediaen.vietnamplus.vn/images/f579a678cf9e90879541752073c260057dd540f800b811214711a03c8e0fc43da1196f9189985e7aa1d6f6629ebd85620af84cd869db8f28074d3861fbc02833/plastic-waste-5499.png.webp" alt="Sampah plastik di pesisir"><div class="body"><h4>♻️ Sampah plastik</h4><div class="small">Bagaimana sampah mengubah kehidupan makhluk hidup?</div><div class="source">Foto: VietnamPlus</div></div></div>
+      <div class="issue-card" onclick="chooseIssue('Pencemaran sungai')"><img src="https://earthbuddies.net/wp-content/uploads/2018/01/Citarum_River_pollution_2009.jpg" alt="Pencemaran sungai"><div class="body"><h4>💧 Pencemaran sungai</h4><div class="small">Apa yang terjadi jika sungai tidak lagi sehat?</div><div class="source">Foto: Earth Buddies/Mother Nature Network</div></div></div>
+      <div class="issue-card" onclick="chooseIssue('Hilangnya habitat hewan')"><img src="https://cdn.nhandan.vn/images/22f099ca8bc7ae81aa2a8d3416a84bf8231d7f62b13fcc35d979c3329406036037ed098d942ccdfa32b560b993b1f953ff3c6047ae29c50e27d45e73a9b3748b3c7c4f229359aba580a4e2f637103b66/151-6071.jpg.webp" alt="Orangutan dan hilangnya habitat"><div class="body"><h4>🐾 Hilangnya habitat</h4><div class="small">Ke mana hewan pergi ketika hutannya berubah?</div><div class="source">Foto: Harian Rakyat/Nhân Dân</div></div></div>
+      <div class="issue-card" onclick="chooseIssue('Perubahan iklim')"><img src="https://www.bmkg.go.id/asset/img/iklim/anomali-suhu-udara-agustus-2026.jpg" alt="Perubahan iklim dan kenaikan suhu" onerror="this.style.display='none';this.nextElementSibling.insertAdjacentHTML('afterbegin','<div style="height:145px;background:linear-gradient(135deg,#f4c95d,#ef8354);display:flex;align-items:center;justify-content:center;font-size:48px">🌡️</div>')"><div class="body"><h4>🌡️ Perubahan iklim</h4><div class="small">Bagaimana perubahan suhu memengaruhi kehidupan?</div><div class="source">Sumber data: BMKG, September 2026</div></div></div>
+    </div>
+    <div class="notice" style="margin-top:15px"><b>Aktivitas literasi visual:</b> pilih satu gambar, tuliskan <i>apa yang kamu lihat → masalah apa yang terjadi → siapa yang terdampak → kemungkinan penyebab → ide penyelesaian</i>.</div>
+  </div>
+
+  <div class="card">
+    <h3>📰 Literasi Berita Lingkungan Terkini</h3>
+    <p class="muted">Baca ringkasan berita berikut. Gunakan informasi faktual sebagai inspirasi, bukan untuk menyalin berita ke dalam cerita.</p>
+    <div class="news-grid">
+      <article class="news-card">
+        <div class="issue-illustration fire" role="img" aria-label="Ilustrasi kebakaran hutan">🔥🌲</div>
+        <div class="body"><span class="tag">KARHUTLA</span><div class="news-meta">BMKG • 7 September 2026</div><h4>September masih menjadi fase kritis kebakaran hutan dan lahan</h4><p>BMKG menyebut kondisi kering, pengaruh El Niño, dan tingginya titik panas perlu terus diwaspadai.</p><a class="news-link" href="https://www.bmkg.go.id/berita/dampak-el-nino-masih-perlu-diwaspadai-bmkg-perkuat-dukungan-pengendalian-karhutla" target="_blank">Baca berita ↗</a></div>
+      </article>
+      <article class="news-card">
+        <img src="https://mediaen.vietnamplus.vn/images/f579a678cf9e90879541752073c260057dd540f800b811214711a03c8e0fc43da1196f9189985e7aa1d6f6629ebd85620af84cd869db8f28074d3861fbc02833/plastic-waste-5499.png.webp" alt="Sampah plastik di pesisir">
+        <div class="body"><span class="tag">SAMPAH</span><div class="news-meta">KLH/BPLH • 8 September 2026</div><h4>Pemerintah menyiapkan peta jalan pengelolaan sampah nasional</h4><p>Pengelolaan sampah perlu ditangani dari hulu hingga hilir dan tidak bergantung pada satu solusi saja.</p><a class="news-link" href="https://www.kemenlh.go.id/news/detail/kejar-target-pengelolaan-sampah-klhbplh-siapkan-peta-jalan-dan-perbarui-aturan-tanggung-jawab-produsen" target="_blank">Baca berita ↗</a></div>
+      </article>
+      <article class="news-card">
+        <div class="issue-illustration climate" role="img" aria-label="Ilustrasi perubahan iklim">🌡️☀️</div>
+        <div class="body"><span class="tag">IKLIM</span><div class="news-meta">BMKG • 9 September 2026</div><h4>Suhu rata-rata Agustus 2026 tercatat jauh lebih tinggi dari normal</h4><p>BMKG mencatat suhu rata-rata Agustus 2026 sebesar 27,22°C, dengan anomali positif 0,95°C.</p><a class="news-link" href="https://www.bmkg.go.id/iklim/anomali-suhu-udara/fakta-perubahan-iklim-bulan-agustus-2026-2" target="_blank">Baca berita ↗</a></div>
+      </article>
+      <article class="news-card">
+        <img src="https://www.nhandan.vn/images/22f099ca8bc7ae81aa2a8d3416a84bf8231d7f62b13fcc35d979c3329406036037ed098d942ccdfa32b560b993b1f953ff3c6047ae29c50e27d45e73a9b3748b3c7c4f229359aba580a4e2f637103b66/151-6071.jpg.webp" alt="Satwa terdampak perubahan habitat">
+        <div class="body"><span class="tag">BERITA DAERAH</span><div class="news-meta">BNPB • 10 September 2026</div><h4>Karhutla dan banjir masih menjadi perhatian di sejumlah wilayah</h4><p>BNPB melaporkan penanganan kebakaran lahan dan banjir terus dilakukan di berbagai daerah.</p><a class="news-link" href="https://bnpb.go.id/berita/perkembangan-situasi-dan-penanganan-bencana-di-tanah-air-10-september-2026" target="_blank">Baca berita ↗</a></div>
+      </article>
+    </div>
+    <div class="literacy-box">
+      <b>🔎 Tantangan literasi berita</b>
+      <ol class="question-mini">
+        <li>Berita mana yang paling menarik perhatianmu? Mengapa?</li>
+        <li>Apa masalah utama, penyebab, dan dampak yang disebutkan dalam berita?</li>
+        <li>Informasi faktual apa yang dapat kamu ubah menjadi konflik dalam cerita fantasi?</li>
+        <li>Jika hewan dalam berita dapat berbicara dan memiliki kekuatan ajaib, apa yang mungkin mereka lakukan?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="ide" class="page">
+  <div class="card">
+    <h2>🌱 Tahap 1 — Dari Isu Menjadi Ide</h2>
+    <p>Mulailah dari masalah nyata, lalu ubah menjadi dunia fantasi yang tetap memiliki hubungan sebab-akibat yang masuk akal.</p>
+    <div class="grid">
+      <div>
+        <label><b>Isu lingkungan</b></label>
+        <select id="issue">
+          <option>Kebakaran hutan</option><option>Sampah plastik</option><option>Pencemaran sungai</option>
+          <option>Hilangnya habitat hewan</option><option>Perubahan iklim</option><option>Lainnya</option>
+        </select>
+      </div>
+      <div><label><b>Penyebab utama</b></label><input id="cause" placeholder="Contoh: kelalaian manusia membakar lahan"></div>
+      <div><label><b>Tokoh utama</b></label><input id="hero" placeholder="Contoh: Raka dan seekor burung ajaib"></div>
+      <div><label><b>Unsur ajaib</b></label><input id="magic" placeholder="Contoh: burung dapat mengendalikan angin"></div>
+    </div>
+    <label style="display:block;margin-top:15px"><b>Ide/premis cerita dalam 1–2 kalimat</b></label>
+    <textarea id="premise" placeholder="Contoh: Ketika hutan terbakar akibat kelalaian manusia, Raka bertemu burung ajaib yang mengajaknya menyelamatkan satwa..."></textarea>
+    <div class="actions"><button class="btn" onclick="generateIdea()">✨ Bantu susun ide</button><button class="btn secondary" onclick="saveAll()">💾 Simpan progres</button></div>
+    <div id="ideaResult"></div>
+  </div>
+  <div class="card">
+    <h3>🧩 Cek Ide Fantasi</h3>
+    <div class="checklist" id="ideaChecklist">
+      <label><input type="checkbox"> Berangkat dari isu lingkungan yang nyata.</label>
+      <label><input type="checkbox"> Ada tokoh dan konflik yang jelas.</label>
+      <label><input type="checkbox"> Ada unsur imajinatif/ajaib.</label>
+      <label><input type="checkbox"> Konflik memiliki sebab dan akibat.</label>
+      <label><input type="checkbox"> Cerita memiliki pesan yang bermakna.</label>
+    </div>
+  </div>
+</section>
+
+<section id="cek" class="page">
+  <div class="card">
+    <h2>🔎 Tahap 2 — Laboratorium Bahasa</h2>
+    <p>Masukkan kalimat dari ceritamu. Aplikasi akan membantu menemukan beberapa kesalahan umum dalam ejaan, tanda baca, dan pilihan kata.</p>
+    <textarea id="sentence" class="short" placeholder="Contoh: para hewan hewan berlari ke hutan,karna asap semakin tebal"></textarea>
+    <div class="actions"><button class="btn" onclick="checkLanguage()">🔍 Periksa kalimat</button><button class="btn secondary" onclick="clearChecker()">Bersihkan</button></div>
+    <div id="languageResult"></div>
+  </div>
+  <div class="card">
+    <h3>📚 Ciri Kebahasaan Teks Fantasi yang Perlu Diperhatikan</h3>
+    <div class="grid">
+      <div class="step"><b>Kata kerja</b><br>berlari, terbang, menyelamatkan, berubah.</div>
+      <div class="step"><b>Kata sifat</b><br>gelap, ajaib, sunyi, menakjubkan.</div>
+      <div class="step"><b>Dialog</b><br>menggunakan tanda petik dan tanda baca yang tepat.</div>
+      <div class="step"><b>Konjungsi</b><br>ketika, kemudian, karena, sehingga, tetapi.</div>
+      <div class="step"><b>Kata rujukan</b><br>ia, mereka, itu, tersebut agar alur padu.</div>
+      <div class="step"><b>Majas/deskripsi</b><br>digunakan secukupnya untuk membangun imajinasi.</div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🛠️ Contoh Perbaikan & Parafrase</h3>
+    <table>
+      <tr><th>Kurang tepat</th><th>Perbaikan</th><th>Parafrase</th></tr>
+      <tr><td>Para hewan hewan berlari ke hutan,karna asap semakin tebal.</td><td>Para hewan berlari ke hutan karena asap semakin tebal.</td><td>Asap yang semakin tebal membuat para hewan bergegas mencari tempat aman.</td></tr>
+      <tr><td>"Tolong selamatkan kami"! teriak Kancil.</td><td>“Tolong selamatkan kami!” teriak Kancil.</td><td>Kancil berteriak meminta pertolongan agar mereka segera diselamatkan.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="tulis" class="page">
+  <div class="card">
+    <h2>✍️ Tahap 3 — Bengkel Cerita Fantasi</h2>
+    <p>Isi setiap bagian. Gunakan isu lingkungan sebagai sumber konflik, tetapi kembangkan dengan imajinasi.</p>
+    <div class="notice"><b>Rumus sederhana:</b> masalah nyata + tokoh + dunia/kejadian ajaib + konflik + penyelesaian + pesan.</div>
+    <div class="step"><b>1. Orientasi</b><span class="muted"> Kenalkan tokoh, latar, dan awal dunia cerita.</span><textarea id="orientasi" placeholder="Siapa tokohnya? Di mana dan kapan cerita terjadi?"></textarea></div>
+    <div class="step"><b>2. Komplikasi</b><textarea id="komplikasi" placeholder="Masalah apa yang mulai terjadi? Apa penyebabnya?"></textarea></div>
+    <div class="step"><b>3. Klimaks</b><textarea id="klimaks" placeholder="Apa titik paling menegangkan? Apa keputusan tokoh?"></textarea></div>
+    <div class="step"><b>4. Resolusi</b><textarea id="resolusi" placeholder="Bagaimana masalah diselesaikan? Apa konsekuensinya?"></textarea></div>
+    <div class="step"><b>5. Koda</b><textarea id="koda" placeholder="Pesan atau perubahan apa yang dapat dipetik?"></textarea></div>
+    <div class="actions"><button class="btn success" onclick="evaluateStory()">⭐ Nilai draf</button><button class="btn secondary" onclick="saveAll()">💾 Simpan progres</button></div>
+    <div id="storyResult"></div>
+  </div>
+
+  <div class="card">
+    <h3>🪄 Ciri-Ciri Teks Fantasi</h3>
+    <div class="checklist" id="fantasyChecklist">
+      <label><input type="checkbox"> Memuat peristiwa/unsur yang bersifat imajinatif atau ajaib.</label>
+      <label><input type="checkbox"> Tokoh memiliki karakter dan tujuan yang jelas.</label>
+      <label><input type="checkbox"> Latar dapat berupa dunia nyata yang diberi sentuhan fantasi atau dunia khayal.</label>
+      <label><input type="checkbox"> Konflik berkembang secara runtut.</label>
+      <label><input type="checkbox"> Cerita tetap memiliki hubungan sebab-akibat.</label>
+      <label><input type="checkbox"> Mengandung nilai/pesan yang relevan dengan kehidupan.</label>
+    </div>
+  </div>
+</section>
+
+<section id="kuis" class="page">
+  <div class="card">
+    <h2>🧠 Tahap 4 — Kuis Cepat</h2>
+    <p>Pilih jawaban yang paling tepat. Skor dihitung otomatis.</p>
+    <div id="quizBox"></div>
+    <button class="btn" onclick="gradeQuiz()">🎯 Periksa jawaban</button>
+    <div id="quizResult"></div>
+  </div>
+</section>
+
+<section id="evaluasi" class="page">
+  <div class="card">
+    <h2>⭐ Tahap 5 — Evaluasi & Refleksi</h2>
+    <p>Gunakan hasil kuis dan penilaian draf sebagai bahan perbaikan.</p>
+    <div class="grid">
+      <div><b>Progres quest</b><div class="progress"><div id="progressBar"></div></div><p id="progressText" class="muted">0% selesai</p></div>
+      <div><b>Skor kuis</b><div class="score" id="quizScore">—</div></div>
+      <div><b>Skor draf</b><div class="score" id="storyScore">—</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🪞 Refleksi Murid</h3>
+    <label>Hal yang paling saya pahami hari ini:</label><textarea id="ref1" class="short"></textarea>
+    <label>Bagian yang masih perlu saya perbaiki:</label><textarea id="ref2" class="short"></textarea>
+    <label>Bagaimana cerita saya menunjukkan kepedulian terhadap lingkungan?</label><textarea id="ref3" class="short"></textarea>
+    <button class="btn success" onclick="saveAll()">💾 Simpan refleksi</button>
+    <div id="saveMsg" class="feedback"></div>
+  </div>
+  <div class="card">
+    <h3>📊 Rubrik Penilaian Draf (opsional untuk guru)</h3>
+    <table>
+      <tr><th>Aspek</th><th>Indikator</th><th>Skor</th></tr>
+      <tr><td>Struktur</td><td>Orientasi–komplikasi–klimaks–resolusi–koda lengkap dan runtut.</td><td>1–4</td></tr>
+      <tr><td>Isi & kreativitas</td><td>Ide menarik, unsur fantasi kuat, konflik berkembang.</td><td>1–4</td></tr>
+      <tr><td>Kebahasaan</td><td>Diksi, kalimat, ejaan, tanda baca, dialog, dan kohesi.</td><td>1–4</td></tr>
+      <tr><td>Pesan</td><td>Pesan lingkungan jelas dan tidak terasa menggurui.</td><td>1–4</td></tr>
+      <tr><td>Keterbacaan</td><td>Cerita mudah diikuti dan sesuai pembaca kelas VII.</td><td>1–4</td></tr>
+    </table>
+  </div>
+</section>
+
+</main>
+<footer>Jejak Imajinasi • Media belajar interaktif Bahasa Indonesia Kelas VII • Data tersimpan hanya di browser perangkat ini.</footer>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+document.querySelectorAll('.tabs button').forEach(btn=>{
+  btn.addEventListener('click',()=>showPage(btn.dataset.page));
+});
+function showPage(id){
+  pages.forEach(p=>p.classList.toggle('active',p.id===id));
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+  window.scrollTo({top:0,behavior:'smooth'}); updateProgress();
+}
+function chooseIssue(v){
+  document.getElementById('issue').value=v;
+  document.getElementById('issueHome').textContent='Pilihanmu: '+v+' — lanjut ke tab “1. Ide”.';
+  showPage('ide');
+}
+function generateIdea(){
+  const issue=document.getElementById('issue').value, cause=document.getElementById('cause').value||'tindakan manusia yang tidak bertanggung jawab';
+  const hero=document.getElementById('hero').value||'seorang murid dan seekor hewan ajaib';
+  const magic=document.getElementById('magic').value||'kekuatan ajaib yang berhubungan dengan alam';
+  const premise=document.getElementById('premise').value||`Ketika ${issue.toLowerCase()} semakin parah akibat ${cause}, ${hero} menggunakan ${magic} untuk menyelamatkan makhluk hidup dan mencari cara mengatasi masalah tersebut.`;
+  document.getElementById('premise').value=premise;
+  document.getElementById('ideaResult').innerHTML=`<div class="result ok"><b>💡 Ide awal:</b><br>${escapeHTML(premise)}<br><span class="small muted">Sekarang kembangkan menjadi konflik yang semakin menegangkan dan penyelesaian yang logis dalam dunia fantasi.</span></div>`;
+  saveAll(); updateProgress();
+}
+function escapeHTML(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+
+const replacements=[
+  {re:/\\bkarna\\b/gi, to:'karena', why:'Gunakan bentuk baku “karena”.'},
+  {re:/\\bnggak\\b/gi, to:'tidak', why:'Untuk narasi formal, gunakan bentuk baku “tidak”.'},
+  {re:/\\bgak\\b/gi, to:'tidak', why:'Untuk narasi formal, gunakan bentuk baku “tidak”.'},
+  {re:/\\budah\\b/gi, to:'sudah', why:'Gunakan bentuk baku “sudah”.'},
+  {re:/\\bnggak\\b/gi, to:'tidak', why:'Gunakan bentuk baku “tidak” pada narasi.'},
+  {re:/\\bijin\\b/gi, to:'izin', why:'Bentuk baku: “izin”.'},
+  {re:/\\bresiko\\b/gi, to:'risiko', why:'Bentuk baku: “risiko”.'},
+  {re:/\\baktifitas\\b/gi, to:'aktivitas', why:'Bentuk baku: “aktivitas”.'},
+  {re:/\\bmerubah\\b/gi, to:'mengubah', why:'Bentuk baku: “mengubah”.'},
+  {re:/\\bsekedar\\b/gi, to:'sekadar', why:'Bentuk baku: “sekadar”.'},
+  {re:/\\bpraktek\\b/gi, to:'praktik', why:'Bentuk baku: “praktik”.'},
+  {re:/\\bdi rubah\\b/gi, to:'diubah', why:'Kata kerja pasif ditulis serangkai: “diubah”.'},
+  {re:/\\bdi hutan\\b/gi, to:'di hutan', why:'“di” sebagai kata depan ditulis terpisah (benar).'}
+];
+function checkLanguage(){
+  let text=document.getElementById('sentence').value.trim();
+  if(!text){document.getElementById('languageResult').innerHTML='<div class="result bad">Tuliskan satu kalimat terlebih dahulu.</div>';return;}
+  let fixed=text, notes=[];
+  replacements.forEach(x=>{if(x.re.test(fixed)){fixed=fixed.replace(x.re,x.to);notes.push(x.why)}});
+  // Spacing and basic punctuation checks
+  if(/\\s+[,.!?]/.test(fixed)){fixed=fixed.replace(/\\s+([,.!?])/g,'$1');notes.push('Hindari spasi sebelum tanda baca.');}
+  if(/[,.!?][A-Za-zÀ-ž]/.test(fixed)){fixed=fixed.replace(/([,.!?])([A-Za-zÀ-ž])/g,'$1 $2');notes.push('Berikan satu spasi setelah tanda baca jika diikuti kata baru.');}
+  if(/\\b(hewan|murid|tokoh|pohon)\\s+\\1\\b/gi.test(fixed)){fixed=fixed.replace(/\\b(hewan|murid|tokoh|pohon)\\s+\\1\\b/gi,'$1');notes.push('Hindari pengulangan kata yang tidak diperlukan.');}
+  if(!/[.!?]$/.test(fixed)){fixed+='.';notes.push('Kalimat pernyataan perlu diakhiri tanda titik.');}
+  const para=`${fixed.charAt(0).toUpperCase()+fixed.slice(1)}`;
+  let html=`<div class="result ${notes.length?'':'ok'}"><b>Perbaikan:</b><br>${escapeHTML(fixed)}<hr><b>Parafrase:</b><br>${escapeHTML(para)}`;
+  if(notes.length) html+=`<hr><b>Yang perlu diperhatikan:</b><ul>${notes.map(n=>`<li>${escapeHTML(n)}</li>`).join('')}</ul>`;
+  else html+='<p class="feedback">✅ Tidak ditemukan masalah umum dari pemeriksaan sederhana ini.</p>';
+  html+='</div>'; document.getElementById('languageResult').innerHTML=html;
+}
+function clearChecker(){document.getElementById('sentence').value='';document.getElementById('languageResult').innerHTML='';}
+
+const questions=[
+ {q:'Bagian yang berfungsi mengenalkan tokoh, latar, dan keadaan awal cerita adalah …',a:['Orientasi','Komplikasi','Klimaks','Koda'],c:0},
+ {q:'Peristiwa paling menegangkan dalam cerita biasanya terdapat pada bagian …',a:['Orientasi','Komplikasi','Klimaks','Koda'],c:2},
+ {q:'Kalimat yang paling menunjukkan unsur fantasi adalah …',a:['Raka berjalan ke sekolah pukul tujuh.','Hujan turun sejak pagi.','Burung itu membuka sayap dan mengeluarkan cahaya yang menyembuhkan hutan.','Murid membaca buku di perpustakaan.'],c:2},
+ {q:'Perbaikan yang tepat untuk “karna hutan terbakar, para hewan berlari” adalah …',a:['karna hutan terbakar para hewan berlari.','Karena hutan terbakar, para hewan berlari.','Karena hutan terbakar para hewan, berlari.','Karna, hutan terbakar para hewan berlari.'],c:1},
+ {q:'Kalimat dialog yang paling tepat adalah …',a:['“Tolong bantu kami”! kata Rusa.','“Tolong bantu kami!” kata Rusa.','“Tolong bantu kami!” Kata Rusa.','“Tolong bantu kami”, kata Rusa!'],c:1},
+ {q:'Agar isu lingkungan menjadi cerita fantasi yang kuat, penulis sebaiknya …',a:['Menghilangkan semua konflik.','Menambahkan unsur ajaib tanpa hubungan dengan cerita.','Menggabungkan masalah nyata dengan unsur imajinatif dan alur sebab-akibat.','Menulis fakta lingkungan saja tanpa tokoh.'],c:2},
+ {q:'Koda dalam cerita terutama dapat digunakan untuk …',a:['Memperkenalkan tokoh','Menambah konflik','Menunjukkan titik paling tegang','Menegaskan pesan atau perubahan setelah konflik'],c:3},
+ {q:'Parafrase berarti …',a:['Menyalin kalimat persis sama','Mengubah bentuk penyampaian tanpa mengubah makna pokok','Menghapus semua informasi','Menambahkan fakta yang tidak ada'],c:1}
+];
+function renderQuiz(){
+ document.getElementById('quizBox').innerHTML=questions.map((x,i)=>`<div class="question"><b>${i+1}. ${x.q}</b>${x.a.map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`).join('')}</div>`).join('');
+}
+function gradeQuiz(){
+ let score=0, answered=0;
+ questions.forEach((x,i)=>{const chosen=document.querySelector(`input[name="q${i}"]:checked`);if(chosen){answered++;if(+chosen.value===x.c)score++;}});
+ if(answered<questions.length){document.getElementById('quizResult').innerHTML=`<div class="result bad">Kamu baru menjawab ${answered}/${questions.length}. Lengkapi semua soal untuk mendapatkan skor.</div>`;return;}
+ const pct=Math.round(score/questions.length*100); localStorage.setItem('ji_quiz',pct);
+ let msg=pct>=88?'🏆 Hebat! Pemahamanmu sangat kuat.':pct>=75?'👏 Bagus! Tinggal perkuat beberapa konsep.':'💪 Ayo pelajari kembali struktur dan ciri kebahasaan, lalu coba lagi.';
+ document.getElementById('quizResult').innerHTML=`<div class="result ok"><div class="score">${pct}</div>${msg}</div>`;
+ updateProgress();
+}
+function storyData(){return ['orientasi','komplikasi','klimaks','resolusi','koda'].map(id=>document.getElementById(id).value.trim());}
+function evaluateStory(){
+ const data=storyData(), filled=data.filter(Boolean).length;
+ let wordCount=data.join(' ').split(/\\s+/).filter(Boolean).length;
+ let score=Math.round((filled/5*50)+(Math.min(wordCount,300)/300*25));
+ const checks=document.querySelectorAll('#fantasyChecklist input:checked').length;
+ score=Math.min(100,score+checks*4);
+ score=Math.max(0,score);
+ localStorage.setItem('ji_story',score);
+ let advice=[];
+ if(filled<5) advice.push('Lengkapi semua bagian struktur.');
+ if(wordCount<120) advice.push('Kembangkan konflik, deskripsi, dan dialog agar cerita lebih hidup.');
+ if(checks<4) advice.push('Periksa kembali ciri-ciri teks fantasi.');
+ if(!advice.length) advice.push('Draf sudah cukup lengkap. Lanjutkan penyuntingan bahasa dan perkuat koda.');
+ document.getElementById('storyResult').innerHTML=`<div class="result ok"><div class="score">${score}/100</div><b>Catatan:</b><ul>${advice.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+ updateProgress();
+}
+function saveAll(){
+ const ids=['issue','cause','hero','magic','premise','sentence','orientasi','komplikasi','klimaks','resolusi','koda','ref1','ref2','ref3'];
+ ids.forEach(id=>{const el=document.getElementById(id);if(el)localStorage.setItem('ji_'+id,el.value)});
+ document.getElementById('saveMsg')?.replaceChildren(document.createTextNode('✅ Progres tersimpan di browser perangkat ini.'));
+ updateProgress();
+}
+function loadAll(){
+ const ids=['issue','cause','hero','magic','premise','sentence','orientasi','komplikasi','klimaks','resolusi','koda','ref1','ref2','ref3'];
+ ids.forEach(id=>{const el=document.getElementById(id),v=localStorage.getItem('ji_'+id);if(el&&v!==null)el.value=v});
+}
+function updateProgress(){
+ let total=0, done=0;
+ const textIds=['cause','hero','magic','premise','orientasi','komplikasi','klimaks','resolusi','koda','ref1','ref2','ref3'];
+ textIds.forEach(id=>{total++;if((document.getElementById(id)?.value||'').trim())done++});
+ document.querySelectorAll('#ideaChecklist input,#fantasyChecklist input').forEach(x=>{total++;if(x.checked)done++});
+ if(localStorage.getItem('ji_quiz')){done++;total++}else{total++}
+ const pct=Math.round(done/total*100);
+ const bar=document.getElementById('progressBar'); if(bar)bar.style.width=pct+'%';
+ const pt=document.getElementById('progressText'); if(pt)pt.textContent=pct+'% selesai';
+ document.getElementById('quizScore').textContent=localStorage.getItem('ji_quiz')?localStorage.getItem('ji_quiz')+'%':'—';
+ document.getElementById('storyScore').textContent=localStorage.getItem('ji_story')?localStorage.getItem('ji_story')+'/100':'—';
+}
+document.querySelectorAll('textarea,input,select').forEach(el=>el.addEventListener('input',updateProgress));
+document.querySelectorAll('#ideaChecklist input,#fantasyChecklist input').forEach(el=>el.addEventListener('change',updateProgress));
+renderQuiz();loadAll();updateProgress();
+</script>
+</body>
+</html>
